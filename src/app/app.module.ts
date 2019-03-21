@@ -1,15 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import { FoxBadgeComponent } from './share/component/fox-badge/fox-badge.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FoxBadgeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MDBBootstrapModule.forRoot()
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

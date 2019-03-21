@@ -1,20 +1,170 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container-fluid">
+  <div class="row no-gutters mt-3">
+    <div class="col">
+      <div class="jumbotron">
+        <h2 class="font-weight-bold">Visual Representation</h2>
+        <h5 class="text-primary">Page Headers</h5>
+        <p class="lead">
+          On pages, statuses are represented by badges next to the page title.
+          The visual display of the badge elements for fox-ui is shown below.
+        </p>
+        <hr class="my-4">
+        <div class="container-fluid">
+          <div class="row no-gutters mt-3 justify-content-between">
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="recordLocked"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Record Locked</h6>
+                  If a page or entity is locked
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="queue"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Queue</h6>
+                  The entity currently belongs to a queue
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters mt-3 justify-content-between">
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="specialHandlingCode"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Special Handling Code</h6>
+                  Member has one or more active special handling codeß
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="requestDenied"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Request Denied</h6>
+                  This request was previously denied
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters mt-3 justify-content-between">
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="maintPending"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Maintenance Pending</h6>
+                  There is a pending maintenance request for the member
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="{}"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Request Approved</h6>
+                  The request was previously approved
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters mt-3 justify-content-between">
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="paperClaim"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Paper Claim</h6>
+                  Claim in question originated as a paper claim
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="pendingApproval"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Pending Approval</h6>
+                  This request is awaiting user approval
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters mt-3 justify-content-between">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="memberMigrated"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Member Migrated</h6>
+                  Indicates that the member has been migrated to FOX
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 class="text-primary">Quick View</h5>
+        <p class="lead">
+          Statuses may optionally be abbreviated to only display icon badge variants.
+          This is shown below.
+        </p>
+        <hr class="my-4">
+        <div class="container-fluid">
+          <div class="row no-gutters mt-3">
+            <div class="col-2">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="recordLockedIcon"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Record Locked</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="paperClaimIcon"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Paper Claim</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 class="text-primary mt-5">Additional Custom Settings</h5>
+        <p class="lead">
+          Statuses may optionally be customized with other settings.
+          This is shown below.
+        </p>
+        <hr class="my-4">
+        <div class="container-fluid">
+          <div class="row no-gutters mt-">
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="iconAfterTextDescription"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Icon after text description</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="noIcon"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">No icon only text</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row no-gutters">
+                <fox-badge [badgeParams]="dynamicText"></fox-badge>
+                <div class="col">
+                  <h6 class="font-weight-bold">Text change dynamically</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
